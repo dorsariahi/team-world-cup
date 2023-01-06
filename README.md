@@ -1,10 +1,11 @@
  - - - -
-# VRG-RANKER
+# VRG RANKER
 ## Description
+
 ## Usage
 ## App Screenshots
 ## Reflection
 ## Resources:
-## Curators:
-
+## Curators
+### Jake Liefschultz, Dorsa Riahi, Zarrar Raja, Khi-Lee Warner
  - - - -
