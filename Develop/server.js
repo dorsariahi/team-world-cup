@@ -1,20 +1,22 @@
 const express = require("express");
-const exphbs = require("express-handlebars");
-const Sequelize = require("sequelize");
-
 const app = express();
+const handlebars = require("express-handlebars");
+const sequelize = require("./config/connection");
 
-const sequelize = new Sequelize("vrgr_db", "user", "password", {
-	host: "localhost",
-	dialect: "mysql",
-});
+// Importing my models
+const Games = require("./models/games");
+const UserVotes = require("./models/user_votes");
+const Users = require("./models/users");
 
-app.engine("handlebars", exphbs());
+//set handlebars as the view engine + set default layout to main.handlebars, like a boss
+app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get("/", (req, res) => {
-	res.render("home");
-});
+// Import our routes
+const Routes = require("./controllers/index");
+
+// Ensure we use the routes
+app.use("/", Routes);
 
 sequelize.sync().then(() => {
 	app.listen(3001, () => {
