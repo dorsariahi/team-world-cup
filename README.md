@@ -1,7 +1,7 @@
  - - - -
 # VRG RANKER
 ## Description
-### Click here!
+### [Click here!](http://localhost:52330/Develop/views/index.html)
 ## Usage
 ## App Screenshots
 ## Reflection
