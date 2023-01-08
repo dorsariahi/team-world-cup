@@ -3,7 +3,7 @@
 ## Description
 This project includes the following features that are required for the search results to work properly and that will be available when the search results are finished. The results are then returned to the user interface, either by synchronous or the async/await function which utilizes promises. These features are available when the search results are finished being retrieved from the API and the results are returned to the user interface using the aforementioned methods and properties of the search results object. These methods will be available when the search results are finished being retrieved from the API.
 
-### [Click here!](http://localhost:52330/Develop/views/index.html)
+### [CLICK HERE!](http://localhost:52330/Develop/views/index.html)
 ## Usage
 To run the application, simply right click on the index.html file and click open with live server or preferred browser options. To see any changes you may desire to experiment with and see in real time, use the live server option. You have an option to log in and simply search any game you desire.
 
