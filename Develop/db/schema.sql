@@ -1,3 +1,6 @@
+feature/logic-for-counting-votes
+DROP DATABASE IF EXISTS games_db;
+
 CREATE DATABASE games_db;
 
 USE games_db;
@@ -21,14 +24,13 @@ CREATE TABLE users (
 );
 
 CREATE TABLE user_votes (
-  rank_id VARCHAR(255) NOT NULL,
 #---Will write query in code to concatenate game_id and user_id values for this rank_id primary key
   game_id INT(11) NOT NULL,
   user_id INT(11) NOT NULL,
   game VARCHAR(255) NOT NULL,
   score TINYINT(1) NOT NULL CHECK (score = -1 OR score = 1),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (rank_id),
+  PRIMARY KEY (game_id, user_id),
   FOREIGN KEY (game_id) REFERENCES games(id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
