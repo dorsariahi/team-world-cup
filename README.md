@@ -1,7 +1,7 @@
  - - - -
 # VRG RANKER
 ## Description
-
+### Click here!
 ## Usage
 ## App Screenshots
 ## Reflection
