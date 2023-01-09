@@ -10,7 +10,7 @@ const sequelize = require("sequelize");
 router.use("/", apiRouter);
 
 router.get("/", (req, res) => {
-	res.send("Landing Page");
+	res.send("home");
 });
 
 module.exports = router;
