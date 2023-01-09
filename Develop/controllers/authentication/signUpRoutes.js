@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt"); // hash them passwords bruh
-const { check, validationResult } = require("express-validator");
-const db = require("/team-world-cup/Develop/models");
+const { body, validationResult } = require("express-validator");
+// const db = require("../../models");
 
 // Render the signup form template when a GET request is made to the /signup route
 router.get("/signup", (req, res) => {
@@ -14,9 +14,9 @@ router.post(
 	"/",
 	// Validate the form data
 	[
-		check("name").not().isEmpty().withMessage("Name is required"),
-		check("email").isEmail().withMessage("Invalid email"),
-		check("password")
+		body("name").not().isEmpty().withMessage("Name is required"),
+		body("email").isEmail().withMessage("Invalid email"),
+		body("password")
 			.isLength({ min: 6 })
 			.withMessage("Password must be at least 6 characters"),
 	],
