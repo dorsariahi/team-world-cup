@@ -28,10 +28,13 @@ const Games = connection.define("games", {
 		type: Sequelize.STRING,
 		allowNull: false,
 	},
-	created: {
+	createdAt: {
 		type: Sequelize.DATE,
 		defaultValue: Sequelize.NOW,
 	},
-});
+	updatedAt: {
+		type: Sequelize.DATE,
+		defaultValue: Sequelize.NOW,
+}});
 
 module.exports = Games;

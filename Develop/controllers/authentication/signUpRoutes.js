@@ -21,6 +21,7 @@ router.post(
 			.withMessage("Password must be at least 6 characters"),
 	],
 	(req, res) => {
+		console.log(req.body);
 		// Check for validation errors
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {

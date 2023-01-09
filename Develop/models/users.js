@@ -25,6 +25,7 @@ const Users = connection.define("users", {
 	email: {
 		type: Sequelize.STRING,
 		allowNull: false,
+		primaryKey: true,
 	},
 	created: {
 		type: Sequelize.DATE,

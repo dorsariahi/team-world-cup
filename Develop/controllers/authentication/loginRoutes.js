@@ -18,7 +18,9 @@ router.post("/login", (req, res) => {
 	}).then((user) => {
 		// If none, then whoops, returns an error message
 		if (!user) {
-			return res.status(400).json({ message: "Invalid email or password" });
+			return res
+				.status(400)
+				.json({ success: false, message: "Invalid email or password" });
 		}
 
 		// If a user is found, compares the provided password with the hashed password in the db
@@ -27,10 +29,14 @@ router.post("/login", (req, res) => {
 			if (isMatch) {
 				req.session.isLoggedIn = true;
 				req.session.userId = user.id;
-				return res.status(200).json({ message: "Successfully logged in" });
+				return res
+					.status(200)
+					.json({ success: true, message: "Successfully logged in" });
 			} else {
 				// If the passwords don't match, returns an error message
-				return res.status(400).json({ message: "Invalid email or password" });
+				return res
+					.status(400)
+					.json({ success: false, message: "Invalid email or password" });
 			}
 		});
 	});
