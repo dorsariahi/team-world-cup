@@ -37,3 +37,47 @@ nav a {
 	color: #333;
 	text-decoration: none;
 }
+
+.game-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+
+.game-name,
+.game-genre,
+.game-release-date,
+.game-score {
+	font-size: 20px;
+	margin: 0 10px;
+}
+
+.game-score {
+	font-weight: bold;
+}
+
+.vote-btns {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.upvote-btn,
+.downvote-btn {
+	font-size: 16px;
+	padding: 5px 10px;
+	margin: 5px 0;
+	border: none;
+	cursor: pointer;
+}
+
+.upvote-btn {
+	background-color: #00cc00;
+	color: white;
+}
+
+.downvote-btn {
+	background-color: #cc0000;
+	color: white;
+}
