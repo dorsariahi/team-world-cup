@@ -5,6 +5,10 @@ const sequelize = require("./config/connection");
 const serveStatic = require("serve-static");
 const session = require("express-session");
 
+// Bring in the sign up routes
+const signUpRoutes = require("./controllers/authentication/signUpRoutes");
+app.use("/signup", signUpRoutes);
+
 // Importing my models
 const Games = require("./models/games");
 const UserVotes = require("./models/user_votes");
@@ -29,10 +33,6 @@ const Routes = require("./controllers/index");
 
 // Ensure we use the routes
 app.use("/", Routes);
-
-// Bring in the sign up routes
-const signUpRoutes = require("./controllers/authentication/singUp");
-app.use("/", signUpRoutes);
 
 app.use(serveStatic("Develop/views/css"));
 
