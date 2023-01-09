@@ -13,7 +13,11 @@ const Users = connection.define("users", {
 		autoIncrement: true,
 	},
 
-	first_name: {
+	name: {
+		type: Sequelize.STRING,
+		allowNull: false,
+	},
+	password: {
 		type: Sequelize.STRING,
 		allowNull: false,
 	},
