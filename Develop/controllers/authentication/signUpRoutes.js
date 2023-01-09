@@ -11,7 +11,7 @@ router.get("/signup", (req, res) => {
 
 //POST request to hanlde the signup form submission
 router.post(
-	"/",
+	"/signup",
 	// Validate the form data
 	[
 		body("name").not().isEmpty().withMessage("Name is required"),
