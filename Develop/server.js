@@ -4,6 +4,8 @@ const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
 const session = require("express-session");
 app.use(express.json());
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 // Bring in the sign up routes
 const signUpRoutes = require("./controllers/authentication/signUpRoutes");
