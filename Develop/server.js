@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
+const serveStatic = require("serve-static");
 
 // Importing my models
 const Games = require("./models/games");
@@ -18,6 +19,8 @@ const Routes = require("./controllers/index");
 
 // Ensure we use the routes
 app.use("/", Routes);
+
+app.use(serveStatic("Develop/views/CSS"));
 
 sequelize.sync().then(() => {
 	app.listen(3001, () => {
