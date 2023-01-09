@@ -11,9 +11,10 @@ document
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ name, email, password }),
 		})
-			.then((response) => response.json())
-			.then((data) => {
-				// do something with the response data
+			.then((response) => {
+				if (response.redirected) {
+					window.location.href = response.url;
+				}
 			})
 			.catch((error) => {
 				// handle any errors
