@@ -30,6 +30,10 @@ const Routes = require("./controllers/index");
 // Ensure we use the routes
 app.use("/", Routes);
 
+// Bring in the sign up routes
+const signUpRoutes = require("./controllers/authentication/singUp");
+app.use("/", signUpRoutes);
+
 app.use(serveStatic("Develop/views/css"));
 
 sequelize.sync().then(() => {
