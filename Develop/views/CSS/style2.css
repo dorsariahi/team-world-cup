@@ -23,3 +23,17 @@ nav a {
 	text-decoration: none;
 	font-size: 16px;
 }
+
+.card {
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.card a {
+	color: #333;
+	text-decoration: none;
+}
