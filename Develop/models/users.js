@@ -13,7 +13,11 @@ const Users = connection.define("users", {
 		autoIncrement: true,
 	},
 
-	first_name: {
+	name: {
+		type: Sequelize.STRING,
+		allowNull: false,
+	},
+	password: {
 		type: Sequelize.STRING,
 		allowNull: false,
 	},
@@ -21,6 +25,7 @@ const Users = connection.define("users", {
 	email: {
 		type: Sequelize.STRING,
 		allowNull: false,
+		primaryKey: true,
 	},
 	created: {
 		type: Sequelize.DATE,

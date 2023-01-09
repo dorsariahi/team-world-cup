@@ -12,7 +12,7 @@ const UserVotes = connection.define("user_votes", {
 		allowNull: false,
 		primaryKey: true,
 		references: {
-			model: Games,
+			model: "games",
 			key: "id",
 		},
 	},
@@ -21,7 +21,7 @@ const UserVotes = connection.define("user_votes", {
 		allowNull: false,
 		primaryKey: true,
 		references: {
-			model: Users,
+			model: "users",
 			key: "id",
 		},
 	},

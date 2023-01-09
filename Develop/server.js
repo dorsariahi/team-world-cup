@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
-const serveStatic = require("serve-static");
 const session = require("express-session");
+app.use(express.json());
 
 // Bring in the sign up routes
 const signUpRoutes = require("./controllers/authentication/signUpRoutes");
@@ -28,13 +28,15 @@ app.use(
 	})
 );
 
+// Define static assets
+const static = express.static("assets");
+app.use(static);
+
 // Import our routes
 const Routes = require("./controllers/index");
 
 // Ensure we use the routes
 app.use("/", Routes);
-
-app.use(serveStatic("Develop/views/css"));
 
 sequelize.sync().then(() => {
 	app.listen(3001, () => {
