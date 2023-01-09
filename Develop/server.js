@@ -9,10 +9,9 @@ const UserVotes = require("./models/user_votes");
 const Users = require("./models/users");
 
 //set handlebars as the view engine + set default layout to main.hbs (actually main.handlebars), like a boss
-
-app.engine("handlebars", exphbs);
-app.set("view engine", "handlebars");
 app.set("views", "./views");
+app.engine("handlebars", exphbs());
+app.set("view engine", "handlebars");
 
 // Import our routes
 const Routes = require("./controllers/index");
