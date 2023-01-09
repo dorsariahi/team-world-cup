@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt"); // hash them passwords bruh
 const { body, validationResult } = require("express-validator");
-// const db = require("../../models");
+const Users = require("../../models/users");
 
 // Render the signup form template when a GET request is made to the /signup route
 router.get("/signup", (req, res) => {
@@ -37,12 +37,11 @@ router.post(
 			}
 
 			// Create new user in the database
-			db.users
-				.create({
-					name,
-					email,
-					password: hashedPassword,
-				})
+			Users.create({
+				name,
+				email,
+				password: hashedPassword,
+			})
 				.then((user) => {
 					// Redirect to login page
 					res.redirect("/login");

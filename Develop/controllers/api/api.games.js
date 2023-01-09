@@ -1,9 +1,9 @@
 const express = require("express");
-const apiRouter = express.Router();
+const router = express.Router();
 const { application } = require("express");
 const sequelize = require("../../config/connection");
 
-apiRouter.get("/api/games", (req, res) => {
+router.get("/api/games", (req, res) => {
 	getGames()
 		.then((games) => {
 			res.render("allGames", { games: games });
@@ -27,4 +27,4 @@ async function getGames() {
 	return games;
 }
 
-module.exports = apiRouter;
+module.exports = router;
