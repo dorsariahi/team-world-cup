@@ -23,7 +23,7 @@ async function getGames() {
 		{ type: sequelize.QueryTypes.SELECT }
 	);
 
-	console.log(games);
+	// console.log(games);
 	return games;
 }
 
