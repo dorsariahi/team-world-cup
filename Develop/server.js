@@ -3,6 +3,7 @@ const app = express();
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
 const session = require("express-session");
+const moment = require("moment");
 app.use(express.json());
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
@@ -18,7 +19,16 @@ const Users = require("./models/users");
 
 //set handlebars as the view engine + set default layout to main.hbs (actually main.handlebars), like a boss
 app.set("views", "./views");
-app.engine("handlebars", exphbs());
+app.engine(
+	"handlebars",
+	exphbs({
+		helpers: {
+			moment: function (date, format) {
+				return moment(date).format(format);
+			},
+		},
+	})
+);
 app.set("view engine", "handlebars");
 
 //Configure express-session
