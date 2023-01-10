@@ -5,19 +5,37 @@
 <h1>All Games</h1>
 
 
+
 <div class="games-container">
   {{#each games}}
     <div class="game-row" data-game-id={{id}}>
       <div class="game-name">{{name}}</div>
       <div class="game-genre">{{genre}}</div>
       <div class="game-release-date">{{moment release_date 'YYYY/MM/DD'}}</div>
+
+<div class="all-container">
+<div class="games-container">
+  {{#each games}}
+    <div class="game-row">
+      <div class="label">
+      <div class="game-name">
+        <h2 class="font--bold">{{name}}</h2>
+      </div>
+      </div>
+<div class="game-content">
+      <div class="game-genre">
+        <span class="font--medium">{{genre}}</span>
+      </div>
+      <div class="game-release-date">{{release_date}}</div>
       <div class="game-score">{{score_sum}}</div>
       <div class="game-vote-buttons">
+        </div>
         <button class="upvote-button" data-game-id={{id}}>Upvote</button>
         <button class="downvote-button" data-game-id={{id}}>Downvote</button>
       </div>
     </div>
   {{/each}}
+</div>
 </div>
 
 <script>
