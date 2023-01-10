@@ -9,7 +9,6 @@ router.get("/login", (req, res) => {
 
 router.post("/login", (req, res) => {
 	const { email, password } = req.body;
-
 	// checks if there is a user with the provided email
 	Users.findOne({
 		where: {
@@ -29,6 +28,7 @@ router.post("/login", (req, res) => {
 			if (isMatch) {
 				req.session.isLoggedIn = true;
 				req.session.userId = user.id;
+				console.log(req.session);
 				return res
 					.status(200)
 					.json({ success: true, message: "Successfully logged in" });
